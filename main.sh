@@ -4,18 +4,17 @@
 cd $(dirname $0)
 
 # imports
-
-# ui/banner: provides the function: banner
 source ./ui/banner.sh
-source ./ui/progressbar.sh
+source ./helpers/error.sh
 
 # main function
 main () {
   banner
-  for n in {1..100}; do
-    progressbar $n "Exiting..."
-    sleep .05
-  done
+  ip=$1
+  if [[ $ip == "" ]]; then
+    error "$0: error: usage: $0 <ip>"
+  fi
+  echo $ip
 }
 
-main
+main $@
