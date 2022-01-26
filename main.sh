@@ -7,7 +7,6 @@ cd $(dirname $0)
 
 # ui/banner: provides the function: banner
 source ./ui/banner.sh
-source ./constants/colors.sh
 
 # main function
 main () {
