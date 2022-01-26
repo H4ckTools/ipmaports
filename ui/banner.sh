@@ -1,17 +1,8 @@
+# this file provides the banner function
+
+source ./constants/colors.sh
+
 # function to print the banner of the script "IpMaPorts"
 banner () {
-cat << EOF
-                                             
- ▄▄▄      ▗▄ ▄▖     ▗▄▄▖                     
- ▀█▀      ▐█ █▌     ▐▛▀▜▖           ▐▌       
-  █  ▐▙█▙ ▐███▌ ▟██▖▐▌ ▐▌ ▟█▙  █▟█▌▐███ ▗▟██▖
-  █  ▐▛ ▜▌▐▌█▐▌ ▘▄▟▌▐██▛ ▐▛ ▜▌ █▘   ▐▌  ▐▙▄▖▘
-  █  ▐▌ ▐▌▐▌▀▐▌▗█▀▜▌▐▌   ▐▌ ▐▌ █    ▐▌   ▀▀█▖
- ▄█▄ ▐█▄█▘▐▌ ▐▌▐▙▄█▌▐▌   ▝█▄█▘ █    ▐▙▄ ▐▄▄▟▌
- ▀▀▀ ▐▌▀▘ ▝▘ ▝▘ ▀▀▝▘▝▘    ▝▀▘  ▀     ▀▀  ▀▀▀ 
-     ▐▌                                      
-
-By AlphaTechnolog and KOK41 :)
-
-EOF
+printf "${RED}$(cat ./plain/banner.txt)${NC}\n"
 }
