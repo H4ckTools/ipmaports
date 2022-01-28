@@ -1,4 +1,0 @@
-Vale te comento 
-nmap lo reportamos como -oN (y aqui iria el nombre del fichero donde lo quieran guardar ejmplo -oN puertos) esto es en ambos comandos de nmap
-En el segundo comando de nmap el menos -Tx la x se cambiari por un numero comprendido entre 1 y 5 estos incluidos que he pensado que eso lo podria elegir el usuario el 1 es lo mas lento y el 5 sería lo mas rapido
-
