@@ -1,4 +1,0 @@
-# Nmap 7.92 scan initiated Sat Jan 29 14:19:36 2022 as: nmap -p- -sS --min-rate 5000 --open -vvv -n -oN alla localhost
-Warning: Hostname localhost resolves to 2 IPs. Using 127.0.0.1.
-Read data files from: /usr/bin/../share/nmap
-# Nmap done at Sat Jan 29 14:20:23 2022 -- 1 IP address (1 host up) scanned in 47.09 seconds
