@@ -8,7 +8,7 @@ source ./helpers/error.sh
 cmd () {
   local cmd=$1
   local desc=$2
-  printf "${BLUE}\$ ${cmd}: ${desc}${NORMAL}${NC}\n"
+  printf "${MAGENTA}\$ ${cmd} ${GREY}# ${desc}${NORMAL}${NC}\n"
   $cmd
   if [[ $? != 0 ]]; then
     error "> The command returned an statuscode different that zero, it means the command is failure!"
