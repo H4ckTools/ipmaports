@@ -1,0 +1,1 @@
+# Nmap 7.92 scan initiated Sat Jan 29 14:15:54 2022 as: nmap -p- -sS --min-rate 5000 --open -vvv -n -oN alal localhost
