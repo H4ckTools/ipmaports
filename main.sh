@@ -10,7 +10,6 @@ source ./helpers/uid.sh
 source ./helpers/deps.sh
 source ./helpers/cmd.sh
 source ./helpers/extractPorts.sh
-source ./ui/prompt.sh
 
 # main function
 main () {
@@ -28,7 +27,7 @@ main () {
     read filename
     printf "${NC}"
   done
-  formats='N X S G A'
+ formats='N X S G A'
   printf "${BLUE}${BOLD}> Formato de exportación de evidencia (${formats}): ${GREEN}"
   read format
   ok=0
@@ -40,7 +39,19 @@ main () {
   if [[ $ok == 0 ]]; then
     error "Formato inválido, formatos son ${formats}"
   fi
-  printf "${BLUE}${BOLD}> Plantilla de temporizado para nmap (1, 2, 3, 4 o 5): ${GREEN}"
+printf "${BLUE}${BOLD}> Quieres min-rate? (y/n) ${GREEN}${NC}"
+read want_min_rate
+
+while [[ $want_min_rate != 'y' && $want_min_rate != 'n' ]]; do
+  printf "${RED}${BOLD}> Ingresa y o n ${GREEN}${NC}"
+  read want_min_rate
+done
+
+if [[ $want_min_rate == 'y' ]]; then
+  # ejecutas aqui el de min-rate
+else
+
+printf "${BLUE}${BOLD}> Plantilla de temporizado para nmap (1, 2, 3, 4 o 5): ${GREEN}"
   read temporizing_level
   printf "${NC}"
   ok=0
@@ -51,7 +62,9 @@ main () {
   done
   if [[ $ok == 0 ]]; then
     error "Plantilla de temporizado debe ser 1, 2, 3, 4 o 5"
-  fi
+  fi  # ejecutas aqui el normal
+fi
+ 
   cmd "ping -c 1 $ip" "Enviando paquetes a la ip"
   cmd "nmap -p- --open -T${temporizing_level} -v -n $ip" "Escaneando puertos de la ip con nmap"
   cmd "nmap -p- -sS --min-rate 5000 --open -vvv -n $ip -o${format} ${filename}" "Ejecutando nmap con opcion minrate y exportando archivo $filename"
