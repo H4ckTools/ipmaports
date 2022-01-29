@@ -52,7 +52,7 @@ main () {
     if [[ $format == 'G' ]]; then
       printf "${BLUE}${BOLD}Intentando extraer puertos con extractPorts (por s4vitar)${NC}\n"
       extractPorts $filename
-      printf "${GREEN}${BOLD}OK, intenta usar Ctrl-V para pegar los puertos.${NC}\n"
+      printf "${GREEN}${BOLD}OK, intenta usar Ctrl + Shift + V para pegar los puertos.${NC}\n"
     fi
   else
     printf "${BLUE}${BOLD}> Plantilla de temporizado para nmap (1, 2, 3, 4 o 5): ${GREEN}"
