@@ -1,9 +1,10 @@
 # execute a cmd and check if it exit successfully
 # and print it to the user
 
-source ./constants/colors.sh
-source ./constants/styles.sh
-source ./helpers/error.sh
+ROOT=$(dirname $0)
+source $ROOT/constants/colors.sh
+source $ROOT/constants/styles.sh
+source $ROOT/helpers/error.sh
 
 cmd () {
   local cmd=$1

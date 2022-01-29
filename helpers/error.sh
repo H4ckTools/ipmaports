@@ -1,7 +1,8 @@
 # define a custom error function
 
-source ./constants/colors.sh
-source ./constants/styles.sh
+ROOT=$(dirname $0)
+source $ROOT/constants/colors.sh
+source $ROOT/constants/styles.sh
 
 # error function
 error () {

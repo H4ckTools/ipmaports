@@ -1,15 +1,14 @@
 #!/bin/bash
 
-# changing the script pwd
-cd $(dirname $0)
+ROOT=$(dirname $0)
 
 # imports
-source ./ui/banner.sh
-source ./helpers/error.sh
-source ./helpers/uid.sh
-source ./helpers/deps.sh
-source ./helpers/cmd.sh
-source ./helpers/extractPorts.sh
+source $ROOT/ui/banner.sh
+source $ROOT/helpers/error.sh
+source $ROOT/helpers/uid.sh
+source $ROOT/helpers/deps.sh
+source $ROOT/helpers/cmd.sh
+source $ROOT/helpers/extractPorts.sh
 
 # main function
 main () {
@@ -18,7 +17,7 @@ main () {
   checkdeps
   ip=$1
   if [[ $ip == "" ]]; then
-    error "$0: error: usage: $0 <ip>"
+    error "$(basename $0): error: usage: $0 <ip>"
   fi
   printf "${BLUE}${BOLD}> Nombre de archivo para exportar evidencia nmap: ${GREEN}"
   read filename

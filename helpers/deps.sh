@@ -1,7 +1,8 @@
 # this file provides a function to check if the user dependencies are
 # installed
 
-source ./helpers/error.sh
+ROOT=$(dirname $0)
+source $ROOT/helpers/error.sh
 
 checkdeps () {
   deps='xclip nmap ping whatweb'
