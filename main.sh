@@ -80,6 +80,7 @@ main () {
       ports=$(getExtractedPorts $filename)
       for port in $ports; do
         printf "${BLUE}${BOLD}Intentando obtener contenido de http://$ip:$port${MAGENTA}${NORMAL}\n"
+        cmd "whatweb http://${ip}:${port}" "Datos de la página con whatweb"
         if ! lynx "http://${ip}:${port}" -dump 2> /dev/null; then
           printf "${RED}${BOLD}[x] No se pudo obtener contenido${NC}${NORMAL}\n"
         fi
