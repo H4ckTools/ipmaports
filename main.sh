@@ -41,11 +41,11 @@ main () {
   fi
   printf "${BLUE}${BOLD}> Quieres min-rate? (y/n) ${GREEN}${NC}"
   read want_min_rate
-
   while [[ $want_min_rate != 'y' && $want_min_rate != 'n' ]]; do
     printf "${RED}${BOLD}> Ingresa y o n ${GREEN}${NC}"
     read want_min_rate
   done
+
   cmd "ping -c 1 $ip" "Enviando paquetes a la ip"
   if [[ $want_min_rate == 'y' ]]; then
     cmd "nmap -p- -sS --min-rate 5000 --open -vvv -n $ip -o${format} ${filename}" "Ejecutando nmap con opcion minrate y exportando archivo $filename"
@@ -68,6 +68,27 @@ main () {
     printf "${BLUE}${BOLD}Intentando extraer puertos con extractPorts (por s4vitar)${NC}\n"
     extractPorts $filename
     printf "${GREEN}${BOLD}OK, intenta usar Ctrl + Shift + V para pegar los puertos.${NC}\n"
+  fi
+  if [[ $format == 'G' ]]; then
+    printf "${BLUE}${BOLD}> Intento obtener contenido html de todos los puertos? (y/n) ${GREEN}${NC}"
+    read get_contents
+    while [[ $get_contents != 'y' && $get_contents != 'n' ]]; do
+      printf "${RED}${BOLD}> Ingresa y o n ${GREEN}${NC}"
+      read get_contents
+    done
+    if [[ $get_contents == 'y' ]]; then
+      ports=$(getExtractedPorts $filename)
+      if ! command -v lynx; then
+        error 'El renderizado html necesita el programa lynx instalado'
+      fi
+      for port in $ports; do
+        printf "${BLUE}${BOLD}Intentando obtener contenido de http://$ip:$port${MAGENTA}${NORMAL}\n"
+        if ! lynx "http://${ip}:${port}" -dump 2> /dev/null; then
+          printf "${RED}${BOLD}[x] No se pudo obtener contenido${NC}${NORMAL}\n"
+        fi
+        echo
+      done
+    fi
   fi
 }
 
