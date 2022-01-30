@@ -78,9 +78,6 @@ main () {
     done
     if [[ $get_contents == 'y' ]]; then
       ports=$(getExtractedPorts $filename)
-      if ! command -v lynx; then
-        error 'El renderizado html necesita el programa lynx instalado'
-      fi
       for port in $ports; do
         printf "${BLUE}${BOLD}Intentando obtener contenido de http://$ip:$port${MAGENTA}${NORMAL}\n"
         if ! lynx "http://${ip}:${port}" -dump 2> /dev/null; then

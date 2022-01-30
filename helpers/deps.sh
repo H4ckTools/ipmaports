@@ -5,7 +5,7 @@ ROOT=$(dirname $0)
 source $ROOT/helpers/error.sh
 
 checkdeps () {
-  deps='xclip nmap ping whatweb'
+  deps='xclip nmap ping whatweb lynx'
   for dep in $deps; do
     if ! command -v $dep 2>&1 > /dev/null; then
       error "The dependency \"$dep\" is required, you must install it on your system"
