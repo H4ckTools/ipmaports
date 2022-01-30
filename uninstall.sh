@@ -38,7 +38,7 @@ EOF
 
 banner () {
   printf "${RED}${BOLD}$(basebanner)${NC}${NORMAL}\n"
-  printf "                                 ${BLUE}${BOLD}Instalación${NC}${NORMAL}\n"
+  printf "                              ${BLUE}${BOLD}Desinstalación${NC}${NORMAL}\n"
   printf "${GREEN}${BOLD}By AlphaTechnolog and KOK41${NC}${NORMAL}\n"
 }
 
@@ -58,29 +58,17 @@ info () {
 }
 
 main () {
-  reset
-  info "Verificando dependencias"
-  checkdeps
-  info "Descargando código fuente"
-  git clone https://github.com/H4ckTools/ipmaports .ipmaports
-  success "OK"
-  info "Moviendo código fuente a /opt/ipmaports, usando sudo"
-  sudo mv ./.ipmaports /opt/ipmaports
-  success "OK"
-  info "Creando el launcher en /usr/bin/ipmaports, usando sudo"
-  sudo touch /usr/bin/ipmaports
-  echo '#!/bin/bash' | sudo tee /usr/bin/ipmaports > /dev/null 2>&1
-  echo 'sudo /opt/ipmaports/main.sh $@' | sudo tee -a /usr/bin/ipmaports > /dev/null 2>&1
-  sudo chmod +x /opt/ipmaports/main.sh
-  sudo chmod +x /usr/bin/ipmaports
-  if command -v bat 2>&1 > /dev/null; then
-    bat /usr/bin/ipmaports
-  elif command -v batcat 2>&1 > /dev/null; then
-    batcat /usr/bin/ipmaports
-  else
-    cat /usr/bin/ipmaports
+  info "Verificando instalación"
+  if ! command -v ipmaports 2>&1 > /dev/null; then
+    error "El comando ipmaports no se puede encontrar en el sistema, instale el programa antes de ejecutar el desinstalador"
   fi
-  success "OK, instalación satisfactoria. Escribe 'ipmaports' para empezar"
+  success "OK"
+  info "Eliminando el código fuente en '/opt/ipmaports', usando sudo"
+  sudo rm -rf /opt/ipmaports
+  success "OK"
+  info "Eliminando el launcher en '/usr/bin/ipmaports', usando sudo"
+  sudo rm /usr/bin/ipmaports
+  success "OK, Desinstalación satisfactoria"
 }
 
 main
