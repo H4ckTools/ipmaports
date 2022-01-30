@@ -39,10 +39,10 @@ main () {
   if [[ $ok == 0 ]]; then
     error "Formato inválido, formatos son ${explained_formats}"
   fi
-  printf "${BLUE}${BOLD}> Quieres min-rate? (y/n) ${GREEN}${NC}"
+  printf "${BLUE}${BOLD}> Quieres min-rate? (y/n) ${GREEN}"
   read want_min_rate
   while [[ $want_min_rate != 'y' && $want_min_rate != 'n' ]]; do
-    printf "${RED}${BOLD}> Ingresa y o n ${GREEN}${NC}"
+    printf "${RED}${BOLD}> Ingresa y o n ${GREEN}"
     read want_min_rate
   done
 
@@ -70,10 +70,10 @@ main () {
     printf "${GREEN}${BOLD}OK, intenta usar Ctrl + Shift + V para pegar los puertos.${NC}\n"
   fi
   if [[ $format == 'G' ]]; then
-    printf "${BLUE}${BOLD}> Intento obtener contenido html de todos los puertos? (y/n) ${GREEN}${NC}"
+    printf "${BLUE}${BOLD}> Intento obtener contenido html de todos los puertos? (y/n) ${GREEN}"
     read get_contents
     while [[ $get_contents != 'y' && $get_contents != 'n' ]]; do
-      printf "${RED}${BOLD}> Ingresa y o n ${GREEN}${NC}"
+      printf "${RED}${BOLD}> Ingresa y o n ${GREEN}"
       read get_contents
     done
     if [[ $get_contents == 'y' ]]; then
