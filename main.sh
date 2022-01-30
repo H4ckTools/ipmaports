@@ -27,7 +27,8 @@ main () {
     printf "${NC}"
   done
   formats='N X S G A'
-  printf "${BLUE}${BOLD}> Formato de exportación de evidencia (${formats}): ${GREEN}"
+  explained_formats='N = Nmap, X = Xml, S = ScRipT KIdd|3, G = Grepeable (ejecuta extractPorts automaticamente), A = Salida en todos los formatos'
+  printf "${BLUE}${BOLD}> Formato de exportación de evidencia (${explained_formats}): ${GREEN}"
   read format
   ok=0
   for f in ${formats}; do
@@ -36,7 +37,7 @@ main () {
     fi
   done
   if [[ $ok == 0 ]]; then
-    error "Formato inválido, formatos son ${formats}"
+    error "Formato inválido, formatos son ${explained_formats}"
   fi
   printf "${BLUE}${BOLD}> Quieres min-rate? (y/n) ${GREEN}${NC}"
   read want_min_rate
@@ -66,7 +67,7 @@ main () {
     if [[ $ok == 0 ]]; then
       error "Plantilla de temporizado debe ser 1, 2, 3, 4 o 5"
     fi
-    cmd "nmap -p- --open -T${temporizing_level} -v -n $ip" "Escaneando puertos de la ip con nmap"
+    cmd "nmap -p- --open -T${temporizing_level} -v -n $ip -o${format} ${filename}" "Escaneando puertos de la ip con nmap, exporta evidencias en ${filename}"
   fi
 }
 
