@@ -29,7 +29,7 @@ And then the uninstallator will be make all for you
 The basic usage for ipmaports is only one paremeter, the ip.
 
 ```sh
-ipmaports <ip>
+ipmaports ip
 ```
 
 Example:
@@ -43,7 +43,7 @@ ipmaports localhost # or any other ip, consider ipmaports will be make some nmap
 IpMaPorts will be make some questions for you, like if you want min-rate, the exportation file, the
 exportation format, etc. Example:
 
-```sh
+```
  ▄▄▄      ▗▄ ▄▖     ▗▄▄▖                     
  ▀█▀      ▐█ █▌     ▐▛▀▜▖           ▐▌       
   █  ▐▙█▙ ▐███▌ ▟██▖▐▌ ▐▌ ▟█▙  █▟█▌▐███ ▗▟██▖
