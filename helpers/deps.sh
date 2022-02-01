@@ -8,7 +8,7 @@ checkdeps () {
   deps='xclip nmap ping whatweb lynx'
   for dep in $deps; do
     if ! command -v $dep 2>&1 > /dev/null; then
-      error "The dependency \"$dep\" is required, you must install it on your system"
+      error "The dependency \"$dep\" is required, you must install it on your system, try with your package manager or recompiling it from source code"
     fi
   done
 }
