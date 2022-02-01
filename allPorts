@@ -1,0 +1,5 @@
+# Nmap 7.92 scan initiated Tue Feb  1 05:58:54 2022 as: nmap -p- --open -T5 -v -n -oG allPorts localhost
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 127.0.0.1 ()	Status: Up
+Host: 127.0.0.1 ()	Ports: 6463/open/tcp/////	Ignored State: closed (65534)
+# Nmap done at Tue Feb  1 05:58:55 2022 -- 1 IP address (1 host up) scanned in 1.30 seconds
