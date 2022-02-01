@@ -28,7 +28,11 @@ main () {
   done
   formats='N X S G A'
   explained_formats='N = Nmap, X = Xml, S = ScRipT KIdd|3, G = Grepeable (ejecuta extractPorts automaticamente), A = Salida en todos los formatos'
-  printf "${BLUE}${BOLD}> Formato de exportación de evidencia (${explained_formats}): ${GREEN}"
+  printf "${RED}[${NC}::${RED}]${ORANGE} Selecciona formato de exportación ${RED}[${NC}::${RED}]${ORANGE}\n"
+  printf "${RED}[${NC}X${RED}]${ORANGE} Xml       ${RED}[${NC}S${RED}]${ORANGE} ScRiPT KiDd|E\n"
+  printf "${RED}[${NC}N${RED}]${ORANGE} Nmap      ${RED}[${NC}A${RED}]${ORANGE} All Formats\n"
+  printf "${RED}[${NC}G${RED}]${ORANGE} Grepeable\n"
+  printf "${BLUE}${BOLD}> Formato de exportación de evidencia: ${GREEN}"
   read format
   ok=0
   for f in ${formats}; do
