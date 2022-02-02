@@ -12,5 +12,7 @@ banner () {
   printf "                       ${RED}${BOLD}Warning:${NC}${NORMAL}\n"
   printf "  ${ORANGE}This Tool is made for educational purpose only${RED}${BOLD}!${NC}\n"
   printf "  ${ORANGE}Author will not be responsible for any misuse of this toolkit${RED}${BOLD}!${NC}\n"
+  printf "\n"
+  printf "${BLUE}Credits: ${GREEN}${BOLD}S4vitar ${MAGENTA}(https://github.com/s4vitar)${ORANGE} -> ${BLUE}extractPorts${ORANGE},${BLUE} whichSystem.py${NC}\n"
   echo
 }

@@ -52,7 +52,7 @@ main () {
   done
 
   cmd "ping -c 1 $ip" "Sending packages to the host using ping"
-  printf "${BLUE}${BOLD}Trying to recognize the operative system using the ttl with whichSystem.py${NC}\n"
+  printf "${BLUE}${BOLD}Trying to recognize the operative system using the ttl with whichSystem.py (by s4vitar)${NC}\n"
   whichSystem $ip
   if [[ $want_min_rate == 'y' ]]; then
     cmd "nmap -p- -sS --min-rate 5000 --open -vvv -n $ip -o${format} ${filename}" "Executing nmap with min-rate and exporting results to $filename"
