@@ -4,6 +4,10 @@ Automatize all your first h4cking thinks with one shell line
 
 ![screenshot](./.screenshots/banner.png)
 
+## Credits
+
+- [s4vitar](https://github.com/s4vitar): extractPorts, whichSystem.py
+
 ## Installation
 
 To install ipmaports you can do this command in your terminal.
