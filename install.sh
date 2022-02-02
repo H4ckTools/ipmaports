@@ -38,7 +38,7 @@ EOF
 
 banner () {
   printf "${RED}${BOLD}$(basebanner)${NC}${NORMAL}\n"
-  printf "                                 ${BLUE}${BOLD}Instalación${NC}${NORMAL}\n"
+  printf "                                 ${BLUE}${BOLD}Installation${NC}${NORMAL}\n"
   printf "${GREEN}${BOLD}By AlphaTechnolog and KOK41${NC}${NORMAL}\n"
 }
 
@@ -59,15 +59,15 @@ info () {
 
 main () {
   reset
-  info "Verificando dependencias"
+  info "Checking dependencies"
   checkdeps
-  info "Descargando código fuente"
+  info "Downloading source code"
   git clone https://github.com/H4ckTools/ipmaports .ipmaports
   success "OK"
-  info "Moviendo código fuente a /opt/ipmaports, usando sudo"
+  info "Moving source code to /opt, using sudo"
   sudo mv ./.ipmaports /opt/ipmaports
   success "OK"
-  info "Creando el launcher en /usr/bin/ipmaports, usando sudo"
+  info "Creating the launcher, using sudo"
   sudo touch /usr/bin/ipmaports
   echo '#!/bin/bash' | sudo tee /usr/bin/ipmaports > /dev/null 2>&1
   echo 'sudo /opt/ipmaports/ipmaports.sh $@' | sudo tee -a /usr/bin/ipmaports > /dev/null 2>&1
@@ -80,7 +80,7 @@ main () {
   else
     cat /usr/bin/ipmaports
   fi
-  success "OK, instalación satisfactoria. Escribe 'ipmaports' para empezar"
+  success "Done, installation successfully, type 'ipmaports <ip>' to start attack"
 }
 
 main
