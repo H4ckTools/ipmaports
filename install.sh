@@ -70,8 +70,8 @@ main () {
   info "Creando el launcher en /usr/bin/ipmaports, usando sudo"
   sudo touch /usr/bin/ipmaports
   echo '#!/bin/bash' | sudo tee /usr/bin/ipmaports > /dev/null 2>&1
-  echo 'sudo /opt/ipmaports/main.sh $@' | sudo tee -a /usr/bin/ipmaports > /dev/null 2>&1
-  sudo chmod +x /opt/ipmaports/main.sh
+  echo 'sudo /opt/ipmaports/ipmaports.sh $@' | sudo tee -a /usr/bin/ipmaports > /dev/null 2>&1
+  sudo chmod +x /opt/ipmaports/ipmaports.sh
   sudo chmod +x /usr/bin/ipmaports
   if command -v bat 2>&1 > /dev/null; then
     bat /usr/bin/ipmaports
