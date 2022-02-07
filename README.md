@@ -6,7 +6,7 @@ Automatize all your first h4cking thinks with one shell line
 
 ## Demonstration
 
-![demonstration](./.misc/demonstration.mp4)
+https://user-images.githubusercontent.com/54639968/152810738-4b865b99-cbd6-4cfe-bdfa-7efec47be785.mp4
 
 ## Credits
 
