@@ -2,7 +2,11 @@
 
 Automatize all your first h4cking thinks with one shell line
 
-![screenshot](./.screenshots/banner.png)
+![banner](./.misc/banner.png)
+
+## Demonstration
+
+![demonstration](./.misc/demonstration.mp4)
 
 ## Credits
 
